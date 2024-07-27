@@ -1,6 +1,8 @@
 import axios from 'axios';
 
+
 const ERGAST_API_BASE_URL = 'https://ergast.com/api/f1';
+
 
 export const getDrivers = async () => {
   const response = await axios.get(`${ERGAST_API_BASE_URL}/current/drivers.json`);
@@ -16,3 +18,8 @@ export const getStandings = async () => {
   const response = await axios.get(`${ERGAST_API_BASE_URL}/current/driverStandings.json`);
   return response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 };
+
+export const getConstructorStandings = async () => {
+    const response = await axios.get(`${ERGAST_API_BASE_URL}/current/constructorStandings.json`);
+    return response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+  };

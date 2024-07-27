@@ -4,6 +4,7 @@ import DriverList from './components/DriverList';
 import TeamList from './components/TeamList';
 import Standings from './components/Standings';
 import './App.css';
+import ConstructorStandings from './components/ConstructorStandings';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
             <Link to="/" className="text-xl hover:underline">Home</Link>
             <Link to="/drivers" className="text-xl hover:underline">Drivers</Link>
             <Link to="/teams" className="text-xl hover:underline">Teams</Link>
-            <Link to="/standings" className="text-xl hover:underline">Standings</Link>
+            <Link to="/standings" className="text-xl hover:underline">WDC Standings</Link>
+            <Link to="/constructor-standings" className="text-xl hover:underline">WCC Standings</Link>
           </nav>
         </header>
         <main className="p-4">
@@ -24,6 +26,7 @@ function App() {
             <Route path="/drivers" element={<DriverList />} />
             <Route path="/teams" element={<TeamList />} />
             <Route path="/standings" element={<Standings />} />
+            <Route path="/constructor-standings" element={<ConstructorStandings />} />
           </Routes>
         </main>
       </div>
